@@ -1,0 +1,54 @@
+settings = {
+	plugins =
+		{
+			-- key is the name passed to Lua's 'require()'
+			["plugin.google.play.services"] = {
+				-- required
+				publisherId = "com.coronalabs",
+				supportedPlatforms = { iphone=true, android=true }
+			},
+			--  ["plugin.adbuddiz"] = { publisherId = "com.adbuddiz" }
+		},  
+
+	orientation = {
+		default = "portrait",
+		supported = { "portrait", }
+	},
+	
+	iphone = {
+		plist = {
+			UIStatusBarHidden = true,
+			UIPrerenderedIcon = true,
+			UIApplicationExitsOnSuspend = true,
+			UIAppFonts ={
+				"Amatic-Bold.ttf"
+			},
+			CFBundleIconFile = "Icon.png",
+			CFBundleIconFiles =
+			{
+                "Icon.png", 
+                "Icon@2x.png", 
+                "Icon-60.png",
+                "Icon-60@2x.png",
+                "Icon-72.png", 
+                "Icon-72@2x.png",
+                "Icon-76.png",
+                "Icon-76@2x.png", 
+                "Icon-Small.png", 
+                "Icon-Small@2x.png",
+                "Icon-Small-40.png",
+                "Icon-Small-40@2x.png",
+                "Icon-Small-50.png", 
+                "Icon-Small-50@2x.png",
+			},
+		}
+	},
+	
+	-- Android permissions
+	androidPermissions = {
+			"android.permission.INTERNET",
+			"android.permission.ACCESS_NETWORK_STATE",
+			"android.permission.READ_PHONE_STATE",
+		},
+}
+
